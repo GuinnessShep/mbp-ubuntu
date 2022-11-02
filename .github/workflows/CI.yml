@@ -50,7 +50,7 @@ jobs:
             echo >&2 "===]> Info: Downloading latest ${MBP_VERSION} kernel: ${MBP_KERNEL_TAG}";
           fi
 
-          while IFS='' read -r line; do KERNEL_PACKAGES+=("$line"); done <  <(curl -sL https://github.com/GuinnessShep/T2-Ubuntu-Kernel/releases/tag/v"${MBP_KERNEL_TAG}" | grep deb | grep span | cut -d'>' -f2 | cut -d'<' -f1)
+          while IFS='' read -r line; do KERNEL_PACKAGES+=("$line"); done <  <(curl -sL https://github.com/t2linux/T2-Ubuntu-Kernel/releases/tag/v"${MBP_KERNEL_TAG}" | grep deb | grep span | cut -d'>' -f2 | cut -d'<' -f1)
 
           mkdir -p "${{ github.workspace }}/files/kernels"
 
